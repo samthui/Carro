@@ -477,6 +477,16 @@
                     <navigationItem key="navigationItem" id="jm7-ls-1OZ"/>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="2100"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="carplateNumberLabel" destination="eI9-Fm-csa" id="dGD-tb-EAW"/>
+                        <outlet property="daysLeftLabel" destination="iDy-PL-d7i" id="YqR-wu-htf"/>
+                        <outlet property="drivenThisMonthLabel" destination="hcj-Vx-W38" id="Y9A-6V-fo6"/>
+                        <outlet property="image" destination="X8F-zf-7ge" id="VZk-75-xGA"/>
+                        <outlet property="lastUpdatedLabel" destination="991-kw-Zx9" id="c3l-Ku-o4s"/>
+                        <outlet property="modelLabel" destination="KMJ-Xw-KMD" id="AKy-SV-fxB"/>
+                        <outlet property="progressBar" destination="Ob5-vz-Znc" id="pdv-vz-OWu"/>
+                        <outlet property="usageDueThisMonthLabel" destination="l3K-k9-Nmw" id="hBr-68-NzP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Tk-Zh-Nby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

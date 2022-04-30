@@ -10,7 +10,16 @@ import UIKit
 import Alamofire
 
 class DetailsViewController: UIViewController {
-//    let viewModel: DetailsViewModel = DetailsViewModel();
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var carplateNumberLabel: UILabel!
+    @IBOutlet weak var daysLeftLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var drivenThisMonthLabel: UILabel!
+    @IBOutlet weak var usageDueThisMonthLabel: UILabel!
+    @IBOutlet weak var lastUpdatedLabel: UILabel!
+    
+        let viewModel: DetailsViewModel = DetailsViewModel();
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,24 +27,25 @@ class DetailsViewController: UIViewController {
         getData()
     }
 
-
-}
-
-// MARK: - Alamofire
-extension DetailsViewController {
-    
-  func getData() {
-      AF.request(Constants.kEndpoint).validate().responseDecodable(of: Response.self) { (result) in
-          print(result)
-      guard let response = result.value else { return }
+    func updateUI() {
+        modelLabel.text = viewModel.model
+        carplateNumberLabel.text = viewModel.carplateNumber
+        daysLeftLabel.text = viewModel.daysLeft
+        progressBar.progress = viewModel.progress
+        drivenThisMonthLabel.text = viewModel.drivenThisMonth
+        usageDueThisMonthLabel.text = viewModel.usageDueThisMonth
+        lastUpdatedLabel.text = viewModel.lastUpdated
     }
-  }
-    
-    
-//  func getData() {
-//      AF.request(Constants.kEndpoint).validate().responseDecodable(of: Response.self) { (result) in
-//          print(result)
-//      guard let response = result.value else { return }
-//    }
-//  }
 }
+
+// MARK: - Query data
+extension DetailsViewController {
+  func getData() {
+      viewModel.getData {[weak self] in
+          DispatchQueue.main.async {
+              self?.updateUI()
+          }
+      }
+    }
+}
+

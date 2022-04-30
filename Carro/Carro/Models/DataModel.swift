@@ -14,14 +14,16 @@ struct DataModel: Decodable {
     let carplateNumber: String
     let totalFines: Int?
     let totalFinesAmount: Double?
-    let totalPerKmRate: String//
+    let totalPerKmRate: String
     let daysLeft: Int?
+    let startTime: Double
+    let endTime: Double
     let drivenThisMonth: Int
     let usageDueThisMonth: Int
     let basePrice: Double?
     let roadTax: Double
     let insuranceExcess: Double
-    let updatedAt: Double//
+    let updatedAt: Double
     let drivers: [DriverModel]
   
   enum CodingKeys: String, CodingKey {
@@ -33,6 +35,8 @@ struct DataModel: Decodable {
     case totalFinesAmount = "total_outstanding_fine_amount"
     case totalPerKmRate = "total_per_km_rate"
     case daysLeft = "days_left"
+    case startTime = "start_time"
+    case endTime = "end_time"
     case drivenThisMonth = "driven_this_month"
     case usageDueThisMonth = "usage_due_this_month"
     case basePrice = "base_price"
