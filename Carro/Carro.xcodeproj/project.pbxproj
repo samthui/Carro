@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224F53E2281D8F3100BF73AC /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53E1281D8F3100BF73AC /* DetailsViewController.swift */; };
+		224F53E8281D97D300BF73AC /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53E7281D97D200BF73AC /* DetailsViewModel.swift */; };
+		224F53EA281D99A400BF73AC /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53E9281D99A300BF73AC /* DataModel.swift */; };
+		224F53EC281DA86C00BF73AC /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53EB281DA86C00BF73AC /* RecordModel.swift */; };
+		224F53EE281DAC1A00BF73AC /* DriverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53ED281DAC1A00BF73AC /* DriverModel.swift */; };
+		224F53F3281DB45C00BF73AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53F2281DB45C00BF73AC /* Constants.swift */; };
+		224F53F5281DB62100BF73AC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53F4281DB62100BF73AC /* Response.swift */; };
 		22ECB1DE281ACF6700825218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DD281ACF6700825218 /* AppDelegate.swift */; };
 		22ECB1E0281ACF6700825218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DF281ACF6700825218 /* SceneDelegate.swift */; };
-		22ECB1E2281ACF6700825218 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1E1281ACF6700825218 /* ViewController.swift */; };
+		22ECB1E2281ACF6700825218 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1E1281ACF6700825218 /* SettingsViewController.swift */; };
 		22ECB1E5281ACF6700825218 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22ECB1E3281ACF6700825218 /* Main.storyboard */; };
 		22ECB1E7281ACF6D00825218 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22ECB1E6281ACF6D00825218 /* Assets.xcassets */; };
 		22ECB1EA281ACF6D00825218 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22ECB1E8281ACF6D00825218 /* LaunchScreen.storyboard */; };
@@ -40,10 +47,17 @@
 
 /* Begin PBXFileReference section */
 		0235E9663CC625FCFD7B036D /* Pods-CarroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarroTests.release.xcconfig"; path = "Target Support Files/Pods-CarroTests/Pods-CarroTests.release.xcconfig"; sourceTree = "<group>"; };
+		224F53E1281D8F3100BF73AC /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		224F53E7281D97D200BF73AC /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		224F53E9281D99A300BF73AC /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		224F53EB281DA86C00BF73AC /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		224F53ED281DAC1A00BF73AC /* DriverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverModel.swift; sourceTree = "<group>"; };
+		224F53F2281DB45C00BF73AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		224F53F4281DB62100BF73AC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		22ECB1DA281ACF6700825218 /* Carro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22ECB1DD281ACF6700825218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22ECB1DF281ACF6700825218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22ECB1E1281ACF6700825218 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22ECB1E1281ACF6700825218 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		22ECB1E4281ACF6700825218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22ECB1E6281ACF6D00825218 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22ECB1E9281ACF6D00825218 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +115,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		224F53E3281D904500BF73AC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				224F53E9281D99A300BF73AC /* DataModel.swift */,
+				224F53EB281DA86C00BF73AC /* RecordModel.swift */,
+				224F53ED281DAC1A00BF73AC /* DriverModel.swift */,
+				224F53F4281DB62100BF73AC /* Response.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		224F53E4281D905100BF73AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		224F53E5281D90F300BF73AC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				224F53E7281D97D200BF73AC /* DetailsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		224F53E6281D912F00BF73AC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				22ECB1E1281ACF6700825218 /* SettingsViewController.swift */,
+				224F53E1281D8F3100BF73AC /* DetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		224F53F1281DB42800BF73AC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				224F53F2281DB45C00BF73AC /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		22ECB1D1281ACF6700825218 = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +183,13 @@
 		22ECB1DC281ACF6700825218 /* Carro */ = {
 			isa = PBXGroup;
 			children = (
+				224F53F1281DB42800BF73AC /* Constants */,
+				224F53E6281D912F00BF73AC /* ViewControllers */,
+				224F53E5281D90F300BF73AC /* ViewModels */,
+				224F53E4281D905100BF73AC /* Views */,
+				224F53E3281D904500BF73AC /* Models */,
 				22ECB1DD281ACF6700825218 /* AppDelegate.swift */,
 				22ECB1DF281ACF6700825218 /* SceneDelegate.swift */,
-				22ECB1E1281ACF6700825218 /* ViewController.swift */,
 				22ECB1E3281ACF6700825218 /* Main.storyboard */,
 				22ECB1E6281ACF6D00825218 /* Assets.xcassets */,
 				22ECB1E8281ACF6D00825218 /* LaunchScreen.storyboard */,
@@ -164,7 +225,6 @@
 				F2ED5B1C78900A529617F3D1 /* Pods-CarroTests.debug.xcconfig */,
 				0235E9663CC625FCFD7B036D /* Pods-CarroTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -407,9 +467,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22ECB1E2281ACF6700825218 /* ViewController.swift in Sources */,
+				22ECB1E2281ACF6700825218 /* SettingsViewController.swift in Sources */,
+				224F53EE281DAC1A00BF73AC /* DriverModel.swift in Sources */,
 				22ECB1DE281ACF6700825218 /* AppDelegate.swift in Sources */,
+				224F53E8281D97D300BF73AC /* DetailsViewModel.swift in Sources */,
+				224F53F5281DB62100BF73AC /* Response.swift in Sources */,
 				22ECB1E0281ACF6700825218 /* SceneDelegate.swift in Sources */,
+				224F53EC281DA86C00BF73AC /* RecordModel.swift in Sources */,
+				224F53EA281D99A400BF73AC /* DataModel.swift in Sources */,
+				224F53E2281D8F3100BF73AC /* DetailsViewController.swift in Sources */,
+				224F53F3281DB45C00BF73AC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
