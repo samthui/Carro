@@ -33,6 +33,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var totalFinesAmountLabel: UILabel!
     @IBOutlet weak var insuranceExcessLabel: UILabel!
     
+    @IBOutlet weak var customizeInsuranceButton: UIButton!
     @IBOutlet weak var viewDocsButton: UIButton!
     
     
@@ -59,6 +60,9 @@ class DetailsViewController: UIViewController {
             
             nameDriverView.isHidden = true
             nameDriverView.removeFromSuperview()
+            
+            customizeInsuranceButton.isHidden = true
+            customizeInsuranceButton.removeFromSuperview()
             
             viewDocsButton.isHidden = true
             viewDocsButton.removeFromSuperview()
