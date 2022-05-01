@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9F9401E9C74C0C393164FD8D86D0068"
-               BuildableName = "DropDown.framework"
-               BlueprintName = "DropDown"
+               BlueprintIdentifier = "6819F499159C87193DDD7D51504DD6C1"
+               BuildableName = "SweeterSwift.framework"
+               BlueprintName = "SweeterSwift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

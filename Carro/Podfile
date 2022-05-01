@@ -6,8 +6,8 @@ target 'Carro' do
   use_frameworks!
 
   # Pods for Carro
-  pod 'Alamofire'
-  pod 'DropDown'
+  pod 'Alamofire', '~> 5.6.1'
+  pod 'RadioGroup', '~> 1.4.4'
 
   target 'CarroTests' do
     inherit! :search_paths

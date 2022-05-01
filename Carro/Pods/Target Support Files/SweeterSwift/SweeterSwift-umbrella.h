@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double DropDownVersionNumber;
-FOUNDATION_EXPORT const unsigned char DropDownVersionString[];
+FOUNDATION_EXPORT double SweeterSwiftVersionNumber;
+FOUNDATION_EXPORT const unsigned char SweeterSwiftVersionString[];
 

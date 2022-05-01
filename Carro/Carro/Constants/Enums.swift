@@ -7,9 +7,8 @@
 
 import Foundation
 
-enum Country: String, Codable {
-    case Singapore
-    case Thailand
+enum Country: String, Codable, CaseIterable {
+    case Singapore, Thailand
 }
 
 enum UserDefaultsKeys: String, Codable {
