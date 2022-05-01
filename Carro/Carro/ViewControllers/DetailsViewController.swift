@@ -19,6 +19,15 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var usageDueThisMonthLabel: UILabel!
     @IBOutlet weak var lastUpdatedLabel: UILabel!
     
+    @IBOutlet weak var basePriceLabel: UILabel!
+    @IBOutlet weak var roadTaxLabel: UILabel!
+    @IBOutlet weak var usageBasedInsuranceLabel: UILabel!
+    @IBOutlet weak var nameDriverLabel: UILabel!
+    @IBOutlet weak var totalFinesLabel: UILabel!
+    @IBOutlet weak var totalFinesAmountLabel: UILabel!
+    @IBOutlet weak var insuranceExcessLabel: UILabel!
+    
+    
         let viewModel: DetailsViewModel = DetailsViewModel();
 
     override func viewDidLoad() {
@@ -35,6 +44,13 @@ class DetailsViewController: UIViewController {
         drivenThisMonthLabel.text = viewModel.drivenThisMonth
         usageDueThisMonthLabel.text = viewModel.usageDueThisMonth
         lastUpdatedLabel.text = viewModel.lastUpdated
+        basePriceLabel.text = viewModel.basePrice
+        roadTaxLabel.text = viewModel.roadTax
+        usageBasedInsuranceLabel.text = viewModel.usageBasedInsurance
+        nameDriverLabel.text = viewModel.nameDriver
+        totalFinesLabel.text = viewModel.totalFines
+        totalFinesAmountLabel.text = viewModel.totalFinesAmount
+        insuranceExcessLabel.text = viewModel.insuranceExcess
     }
 }
 

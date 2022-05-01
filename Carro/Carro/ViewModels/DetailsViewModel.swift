@@ -50,7 +50,7 @@ class DetailsViewModel {
             formatter.usesGroupingSeparator = true
             formatter.positiveSuffix = unit
 
-////            let number = NSNumber(value: data!.usageDueThisMonth)
+////            let number = NSNumber(value: data!.drivenThisMonth)
             let number = NSNumber(value: 8562)
             return formatter.string(from: number)!
             
@@ -64,14 +64,7 @@ class DetailsViewModel {
     var usageDueThisMonth: String {
         get {
             let formatter = NumberFormatter()
-            formatter.currencySymbol = Constants.kCurrencySymbol
-            formatter.usesGroupingSeparator = true
-            formatter.numberStyle = .currency
-            formatter.locale = Locale.current
-
-            let number = NSNumber(value: data!.drivenThisMonth)
-//            let number = NSNumber(value: 15135)
-            return formatter.string(from: number)!
+            return formatter.formatCurrency(Double(data!.usageDueThisMonth))
         }
     }
     
@@ -82,6 +75,60 @@ class DetailsViewModel {
             formatter.locale = Locale.current
             
             return formatter.string(from: Date(timeIntervalSince1970: data!.updatedAt))
+        }
+    }
+    
+    var basePrice: String {
+        get {
+            let formatter = NumberFormatter()
+            return "\(formatter.formatCurrency(data!.basePrice ?? 0.0) ?? "0")/month"
+        }
+    }
+    
+    var roadTax: String {
+        get {
+            let formatter = NumberFormatter()
+            return formatter.formatCurrency(data!.roadTax)
+        }
+    }
+    
+    var usageBasedInsurance: String {
+        get {
+            return "$ \(data!.totalPerKmRate)/km"
+        }
+    }
+    
+    var nameDriver: String {
+        get {
+            return data!.drivers[0].name
+        }
+    }
+    
+    var totalFines: String {
+        get {
+            guard let value = data!.totalFines else {
+                return "0"
+            }
+            return "\(value)"
+        }
+    }
+    
+    var totalFinesAmount: String {
+        get {
+            let formatter = NumberFormatter()
+            
+            guard let value = data!.totalFinesAmount else {
+                return formatter.formatCurrency(0.0)
+            }
+            
+            return formatter.formatCurrency(value)
+        }
+    }
+    
+    var insuranceExcess: String {
+        get {
+            let formatter = NumberFormatter()
+            return formatter.formatCurrency(data!.insuranceExcess)
         }
     }
     

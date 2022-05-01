@@ -12,6 +12,7 @@ struct DataModel: Decodable {
     let make: String
     let model: String
     let carplateNumber: String
+    let price: String
     let totalFines: Int?
     let totalFinesAmount: Double?
     let totalPerKmRate: String
@@ -31,6 +32,7 @@ struct DataModel: Decodable {
     case make
     case model
     case carplateNumber = "carplate_number"
+    case price
     case totalFines = "total_outstanding_fine_count"
     case totalFinesAmount = "total_outstanding_fine_amount"
     case totalPerKmRate = "total_per_km_rate"

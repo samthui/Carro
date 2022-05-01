@@ -15,6 +15,10 @@
 		224F53F3281DB45C00BF73AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53F2281DB45C00BF73AC /* Constants.swift */; };
 		224F53F5281DB62100BF73AC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53F4281DB62100BF73AC /* Response.swift */; };
 		224F53F7281DCCBE00BF73AC /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53F6281DCCBD00BF73AC /* CalendarExtension.swift */; };
+		224F53FD281DE54D00BF73AC /* DataStackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F53FC281DE54D00BF73AC /* DataStackItem.swift */; };
+		224F53FF281DE59700BF73AC /* DataStackItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224F53FE281DE59700BF73AC /* DataStackItem.xib */; };
+		224F5401281E1CA300BF73AC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5400281E1CA300BF73AC /* Utils.swift */; };
+		224F5404281E1CFC00BF73AC /* FormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5403281E1CFC00BF73AC /* FormatterExtension.swift */; };
 		22ECB1DE281ACF6700825218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DD281ACF6700825218 /* AppDelegate.swift */; };
 		22ECB1E0281ACF6700825218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DF281ACF6700825218 /* SceneDelegate.swift */; };
 		22ECB1E2281ACF6700825218 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1E1281ACF6700825218 /* SettingsViewController.swift */; };
@@ -56,6 +60,10 @@
 		224F53F2281DB45C00BF73AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		224F53F4281DB62100BF73AC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		224F53F6281DCCBD00BF73AC /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
+		224F53FC281DE54D00BF73AC /* DataStackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStackItem.swift; sourceTree = "<group>"; };
+		224F53FE281DE59700BF73AC /* DataStackItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataStackItem.xib; sourceTree = "<group>"; };
+		224F5400281E1CA300BF73AC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		224F5403281E1CFC00BF73AC /* FormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterExtension.swift; sourceTree = "<group>"; };
 		22ECB1DA281ACF6700825218 /* Carro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22ECB1DD281ACF6700825218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22ECB1DF281ACF6700825218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +139,7 @@
 		224F53E4281D905100BF73AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				224F53F9281DE4DB00BF73AC /* DataStackItem */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,8 +173,26 @@
 			isa = PBXGroup;
 			children = (
 				224F53F6281DCCBD00BF73AC /* CalendarExtension.swift */,
+				224F5403281E1CFC00BF73AC /* FormatterExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		224F53F9281DE4DB00BF73AC /* DataStackItem */ = {
+			isa = PBXGroup;
+			children = (
+				224F53FC281DE54D00BF73AC /* DataStackItem.swift */,
+				224F53FE281DE59700BF73AC /* DataStackItem.xib */,
+			);
+			path = DataStackItem;
+			sourceTree = "<group>";
+		};
+		224F5402281E1CA800BF73AC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				224F5400281E1CA300BF73AC /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		22ECB1D1281ACF6700825218 = {
@@ -205,6 +232,7 @@
 				22ECB1E8281ACF6D00825218 /* LaunchScreen.storyboard */,
 				22ECB1EB281ACF6D00825218 /* Info.plist */,
 				224F53F8281DCCC600BF73AC /* Extensions */,
+				224F5402281E1CA800BF73AC /* Utils */,
 			);
 			path = Carro;
 			sourceTree = "<group>";
@@ -349,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22ECB1EA281ACF6D00825218 /* LaunchScreen.storyboard in Resources */,
+				224F53FF281DE59700BF73AC /* DataStackItem.xib in Resources */,
 				22ECB1E7281ACF6D00825218 /* Assets.xcassets in Resources */,
 				22ECB1E5281ACF6700825218 /* Main.storyboard in Resources */,
 			);
@@ -483,10 +512,13 @@
 				22ECB1DE281ACF6700825218 /* AppDelegate.swift in Sources */,
 				224F53F7281DCCBE00BF73AC /* CalendarExtension.swift in Sources */,
 				224F53E8281D97D300BF73AC /* DetailsViewModel.swift in Sources */,
+				224F5401281E1CA300BF73AC /* Utils.swift in Sources */,
+				224F5404281E1CFC00BF73AC /* FormatterExtension.swift in Sources */,
 				224F53F5281DB62100BF73AC /* Response.swift in Sources */,
 				22ECB1E0281ACF6700825218 /* SceneDelegate.swift in Sources */,
 				224F53EC281DA86C00BF73AC /* RecordModel.swift in Sources */,
 				224F53EA281D99A400BF73AC /* DataModel.swift in Sources */,
+				224F53FD281DE54D00BF73AC /* DataStackItem.swift in Sources */,
 				224F53E2281D8F3100BF73AC /* DetailsViewController.swift in Sources */,
 				224F53F3281DB45C00BF73AC /* Constants.swift in Sources */,
 			);
