@@ -6,6 +6,7 @@ target 'Carro' do
   use_frameworks!
 
   # Pods for Carro
+  pod 'Alamofire'
   pod 'DropDown'
 
   target 'CarroTests' do
