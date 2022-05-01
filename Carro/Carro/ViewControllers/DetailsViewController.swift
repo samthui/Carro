@@ -19,6 +19,12 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var usageDueThisMonthLabel: UILabel!
     @IBOutlet weak var lastUpdatedLabel: UILabel!
     
+    @IBOutlet weak var usageBasedInsuranceView: UIView!
+    @IBOutlet weak var nameDriverView: UIView!
+    @IBOutlet weak var totalFinesView: UIView!
+    @IBOutlet weak var totalFinesAmountView: UIView!
+    
+    
     @IBOutlet weak var basePriceLabel: UILabel!
     @IBOutlet weak var roadTaxLabel: UILabel!
     @IBOutlet weak var usageBasedInsuranceLabel: UILabel!
@@ -27,13 +33,38 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var totalFinesAmountLabel: UILabel!
     @IBOutlet weak var insuranceExcessLabel: UILabel!
     
+    @IBOutlet weak var viewDocsButton: UIButton!
     
-        let viewModel: DetailsViewModel = DetailsViewModel();
+    
+    let viewModel: DetailsViewModel = DetailsViewModel();
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideItemsBasedOnCountry()
         getData()
+    }
+    
+    func hideItemsBasedOnCountry() {
+        // TODO: factory
+        if isSingapore() {
+            totalFinesView.isHidden = true
+            totalFinesView.removeFromSuperview()
+            
+            totalFinesAmountView.isHidden = true
+            totalFinesAmountView.removeFromSuperview()
+        } else {
+            usageBasedInsuranceView.isHidden = true
+            usageBasedInsuranceView.removeFromSuperview()
+            
+            nameDriverView.isHidden = true
+            nameDriverView.removeFromSuperview()
+            
+            viewDocsButton.isHidden = true
+            viewDocsButton.removeFromSuperview()
+        }
+        
+        self.view.layoutIfNeeded()
     }
 
     func updateUI() {
@@ -46,10 +77,13 @@ class DetailsViewController: UIViewController {
         lastUpdatedLabel.text = viewModel.lastUpdated
         basePriceLabel.text = viewModel.basePrice
         roadTaxLabel.text = viewModel.roadTax
-        usageBasedInsuranceLabel.text = viewModel.usageBasedInsurance
-        nameDriverLabel.text = viewModel.nameDriver
-        totalFinesLabel.text = viewModel.totalFines
-        totalFinesAmountLabel.text = viewModel.totalFinesAmount
+        if isSingapore() {
+            usageBasedInsuranceLabel.text = viewModel.usageBasedInsurance
+            nameDriverLabel.text = viewModel.nameDriver
+        } else {
+            totalFinesLabel.text = viewModel.totalFines
+            totalFinesAmountLabel.text = viewModel.totalFinesAmount
+        }
         insuranceExcessLabel.text = viewModel.insuranceExcess
     }
 }
@@ -62,6 +96,21 @@ extension DetailsViewController {
               self?.updateUI()
           }
       }
+    }
+}
+
+// MARK: - Utilities
+extension DetailsViewController {
+    // TODO: factory, open for checking more countries
+    func isSingapore() -> Bool {
+        let country: String = UserDefaults.standard.string(forKey: UserDefaultsKeys.Country.rawValue) ?? Constants.kDefaultCountry.rawValue
+
+        // TODO: factory
+        if country == Country.Singapore.rawValue {
+            return true
+        }
+
+        return false
     }
 }
 

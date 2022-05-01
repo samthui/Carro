@@ -12,4 +12,5 @@ struct Constants {
     static let kCurrencySymbol: String = "$"
     static let kLengthUnit: String = "km"
     static let kDateFormat: String = "dd/MM/yyyy"
+    static let kDefaultCountry: Country = .Singapore
 }

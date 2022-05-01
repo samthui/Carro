@@ -19,6 +19,7 @@
 		224F53FF281DE59700BF73AC /* DataStackItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 224F53FE281DE59700BF73AC /* DataStackItem.xib */; };
 		224F5401281E1CA300BF73AC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5400281E1CA300BF73AC /* Utils.swift */; };
 		224F5404281E1CFC00BF73AC /* FormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5403281E1CFC00BF73AC /* FormatterExtension.swift */; };
+		224F5406281E34E300BF73AC /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5405281E34E300BF73AC /* Enums.swift */; };
 		22ECB1DE281ACF6700825218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DD281ACF6700825218 /* AppDelegate.swift */; };
 		22ECB1E0281ACF6700825218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DF281ACF6700825218 /* SceneDelegate.swift */; };
 		22ECB1E2281ACF6700825218 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1E1281ACF6700825218 /* SettingsViewController.swift */; };
@@ -64,6 +65,7 @@
 		224F53FE281DE59700BF73AC /* DataStackItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataStackItem.xib; sourceTree = "<group>"; };
 		224F5400281E1CA300BF73AC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		224F5403281E1CFC00BF73AC /* FormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterExtension.swift; sourceTree = "<group>"; };
+		224F5405281E34E300BF73AC /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		22ECB1DA281ACF6700825218 /* Carro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22ECB1DD281ACF6700825218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22ECB1DF281ACF6700825218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				224F53F2281DB45C00BF73AC /* Constants.swift */,
+				224F5405281E34E300BF73AC /* Enums.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				224F53E8281D97D300BF73AC /* DetailsViewModel.swift in Sources */,
 				224F5401281E1CA300BF73AC /* Utils.swift in Sources */,
 				224F5404281E1CFC00BF73AC /* FormatterExtension.swift in Sources */,
+				224F5406281E34E300BF73AC /* Enums.swift in Sources */,
 				224F53F5281DB62100BF73AC /* Response.swift in Sources */,
 				22ECB1E0281ACF6700825218 /* SceneDelegate.swift in Sources */,
 				224F53EC281DA86C00BF73AC /* RecordModel.swift in Sources */,

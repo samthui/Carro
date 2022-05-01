@@ -727,12 +727,17 @@
                         <outlet property="lastUpdatedLabel" destination="991-kw-Zx9" id="c3l-Ku-o4s"/>
                         <outlet property="modelLabel" destination="KMJ-Xw-KMD" id="AKy-SV-fxB"/>
                         <outlet property="nameDriverLabel" destination="4u4-Ck-phI" id="iej-He-sew"/>
+                        <outlet property="nameDriverView" destination="oIE-4Z-i5Y" id="zTD-yK-JsL"/>
                         <outlet property="progressBar" destination="Ob5-vz-Znc" id="pdv-vz-OWu"/>
                         <outlet property="roadTaxLabel" destination="6CB-dX-YXA" id="QWk-Zq-XEP"/>
                         <outlet property="totalFinesAmountLabel" destination="tU8-0h-TaD" id="i2y-zM-r33"/>
+                        <outlet property="totalFinesAmountView" destination="9E0-9A-oea" id="l9e-xm-lEw"/>
                         <outlet property="totalFinesLabel" destination="2WN-6N-uI5" id="xmN-EG-zFO"/>
+                        <outlet property="totalFinesView" destination="3bZ-oO-nVa" id="43A-Dy-WZl"/>
                         <outlet property="usageBasedInsuranceLabel" destination="VUI-pa-L32" id="EwF-L4-t4n"/>
+                        <outlet property="usageBasedInsuranceView" destination="GOS-47-mbp" id="9GY-cj-pfM"/>
                         <outlet property="usageDueThisMonthLabel" destination="l3K-k9-Nmw" id="hBr-68-NzP"/>
+                        <outlet property="viewDocsButton" destination="zqW-TR-G8W" id="X8E-U6-wYZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Tk-Zh-Nby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
