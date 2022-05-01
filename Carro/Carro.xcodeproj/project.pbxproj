@@ -20,6 +20,7 @@
 		224F5401281E1CA300BF73AC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5400281E1CA300BF73AC /* Utils.swift */; };
 		224F5404281E1CFC00BF73AC /* FormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5403281E1CFC00BF73AC /* FormatterExtension.swift */; };
 		224F5406281E34E300BF73AC /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5405281E34E300BF73AC /* Enums.swift */; };
+		22DE7ED3281E85B8006A7C8B /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7ED2281E85B8006A7C8B /* ViewExtension.swift */; };
 		22ECB1DE281ACF6700825218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DD281ACF6700825218 /* AppDelegate.swift */; };
 		22ECB1E0281ACF6700825218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DF281ACF6700825218 /* SceneDelegate.swift */; };
 		22ECB1E2281ACF6700825218 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1E1281ACF6700825218 /* SettingsViewController.swift */; };
@@ -66,6 +67,7 @@
 		224F5400281E1CA300BF73AC /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		224F5403281E1CFC00BF73AC /* FormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterExtension.swift; sourceTree = "<group>"; };
 		224F5405281E34E300BF73AC /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		22DE7ED2281E85B8006A7C8B /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		22ECB1DA281ACF6700825218 /* Carro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22ECB1DD281ACF6700825218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22ECB1DF281ACF6700825218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				224F53F6281DCCBD00BF73AC /* CalendarExtension.swift */,
 				224F5403281E1CFC00BF73AC /* FormatterExtension.swift */,
+				22DE7ED2281E85B8006A7C8B /* ViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				224F53F7281DCCBE00BF73AC /* CalendarExtension.swift in Sources */,
 				224F53E8281D97D300BF73AC /* DetailsViewModel.swift in Sources */,
 				224F5401281E1CA300BF73AC /* Utils.swift in Sources */,
+				22DE7ED3281E85B8006A7C8B /* ViewExtension.swift in Sources */,
 				224F5404281E1CFC00BF73AC /* FormatterExtension.swift in Sources */,
 				224F5406281E34E300BF73AC /* Enums.swift in Sources */,
 				224F53F5281DB62100BF73AC /* Response.swift in Sources */,

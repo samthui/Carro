@@ -74,7 +74,7 @@ class DetailsViewModel {
             formatter.dateFormat = Constants.kDateFormat
             formatter.locale = Locale.current
             
-            return formatter.string(from: Date(timeIntervalSince1970: data!.updatedAt))
+            return "last updated: \(formatter.string(from: Date(timeIntervalSince1970: data!.updatedAt)))"
         }
     }
     

@@ -49,23 +49,13 @@ class DetailsViewController: UIViewController {
     func hideItemsBasedOnCountry() {
         // TODO: factory
         if isSingapore() {
-            totalFinesView.isHidden = true
-            totalFinesView.removeFromSuperview()
-            
-            totalFinesAmountView.isHidden = true
-            totalFinesAmountView.removeFromSuperview()
+            totalFinesView.selfRemove()
+            totalFinesAmountView.selfRemove()
         } else {
-            usageBasedInsuranceView.isHidden = true
-            usageBasedInsuranceView.removeFromSuperview()
-            
-            nameDriverView.isHidden = true
-            nameDriverView.removeFromSuperview()
-            
-            customizeInsuranceButton.isHidden = true
-            customizeInsuranceButton.removeFromSuperview()
-            
-            viewDocsButton.isHidden = true
-            viewDocsButton.removeFromSuperview()
+            usageBasedInsuranceView.selfRemove()
+            nameDriverView.selfRemove()
+            customizeInsuranceButton.selfRemove()
+            viewDocsButton.selfRemove()
         }
         
         self.view.layoutIfNeeded()
