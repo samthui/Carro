@@ -17,7 +17,7 @@ enum NetworkError: Error {
 }
 
 class AlamoFireAdaptor: NetworkInterface {
-    static func request(_ endpoint: String!, onSuccess: @escaping (Any) -> Void, onError: @escaping (Error) -> Void) {
+    func request(_ endpoint: String!, onSuccess: @escaping (Any) -> Void, onError: @escaping (Error) -> Void) {
         AF.request(endpoint).validate().responseDecodable(of: Response.self) { (result) in
             guard let response = result.value else {
                 onError(NetworkError.invalidResponse)

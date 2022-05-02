@@ -45,7 +45,7 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = DetailsViewModel(self)
+        viewModel = DetailsViewModel(self, networkLayer: AlamoFireAdaptor())
         
         hideItemsBasedOnCountry()
         getData()

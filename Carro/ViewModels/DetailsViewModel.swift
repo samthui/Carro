@@ -19,6 +19,7 @@ protocol DetailsViewModelDelegate {
 
 class DetailsViewModel {
     private var delegate: DetailsViewModelDelegate!
+    private var networkLayer: NetworkInterface!
     private var data: DataModel?
     private var state: NetworkState = .none {
         didSet {
@@ -26,8 +27,9 @@ class DetailsViewModel {
         }
     }
     
-    init(_ delegate: DetailsViewModelDelegate) {
+    init(_ delegate: DetailsViewModelDelegate, networkLayer: NetworkInterface) {
         self.delegate = delegate
+        self.networkLayer = networkLayer
     }
     
     
@@ -151,7 +153,7 @@ class DetailsViewModel {
     func getData(_ completion: @escaping () -> Void) {
         state = .loading
         
-        AlamoFireAdaptor.request(Constants.kEndpoint, onSuccess: { data in
+        networkLayer.request(Constants.kEndpoint, onSuccess: { data in
             self.state = .succeed
             self.data = data as! DataModel?
             completion()

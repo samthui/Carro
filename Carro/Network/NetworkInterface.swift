@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkInterface {
-    static func request(_ endpoint: String!, onSuccess: @escaping (_ data: Any) -> Void, onError: @escaping (_ error: Error) -> Void)
+    func request(_ endpoint: String!, onSuccess: @escaping (_ data: Any) -> Void, onError: @escaping (_ error: Error) -> Void)
 }
