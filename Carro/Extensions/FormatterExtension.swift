@@ -8,13 +8,15 @@
 import Foundation
 
 extension NumberFormatter {
-    func formatCurrency(_ value: Double) -> String! {
-        self.currencySymbol = Constants.kCurrencySymbol
-        self.usesGroupingSeparator = true
-        self.numberStyle = .currency
-        self.locale = Locale.current
+    static func formatCurrency(_ value: Double) -> String! {
+        let formatter = NumberFormatter()
+        
+        formatter.currencySymbol = Constants.kCurrencySymbol
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_US")
 
         let number = NSNumber(value: value)
-        return self.string(from: number)!
+        return formatter.string(from: number)!
     }
 }

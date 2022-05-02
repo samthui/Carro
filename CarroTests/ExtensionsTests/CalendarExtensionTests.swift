@@ -17,6 +17,7 @@ class CalendarExtensionTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        calendar = nil
     }
 
     func testNumberOfDaysBetweenTimestamp() throws {

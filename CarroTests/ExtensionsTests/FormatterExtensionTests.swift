@@ -9,20 +9,15 @@ import XCTest
 @testable import Carro
 
 class FormatterExtensionTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testFormatCurrency() throws {
+        XCTAssertEqual(NumberFormatter.formatCurrency(0.0), "$0.00")
+        XCTAssertEqual(NumberFormatter.formatCurrency(-21.0), "-$21.00")
+        XCTAssertEqual(NumberFormatter.formatCurrency(-492.0), "-$492.00")
+        XCTAssertEqual(NumberFormatter.formatCurrency(-9520.0), "-$9,520.00")
+        XCTAssertEqual(NumberFormatter.formatCurrency(-1111111.0), "-$1,111,111.00")
+        XCTAssertEqual(NumberFormatter.formatCurrency(21.0), "$21.00")
+        XCTAssertEqual(NumberFormatter.formatCurrency(492.0), "$492.00")
+        XCTAssertEqual(NumberFormatter.formatCurrency(9520.0), "$9,520.00")
+        XCTAssertEqual(NumberFormatter.formatCurrency(1111111.0), "$1,111,111.00")
     }
 }
