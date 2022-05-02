@@ -9,20 +9,28 @@ import XCTest
 @testable import Carro
 
 class UtilsTests: XCTestCase {
+    let mainAttribute: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.orange, .font: UIFont.systemFont(ofSize: 30)]
+    let unitAttribute: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.orange, .font: UIFont.systemFont(ofSize: 17)]
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testAttributeMeasurementKm() throws {
+        let length = "177"
+        let unit = "km"
+        let lengthString = NSMutableAttributedString(string: length, attributes: mainAttribute)
+        let unitString = NSAttributedString(string: unit, attributes: unitAttribute)
+        lengthString.append(unitString)
+        
+        let utilsResult = Utils.attributeMeasurement("\(length)\(unit)", unit: unit)!
+        XCTAssertTrue(utilsResult.isEqual(to: lengthString))
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testAttributeMeasurementDolar() throws {
+        let value = "500"
+        let unit = "$"
+        let string = NSMutableAttributedString(string: unit, attributes: unitAttribute)
+        let valueString = NSAttributedString(string: value, attributes: mainAttribute)
+        string.append(valueString)
+        
+        let utilsResult = Utils.attributeMeasurement("\(unit)\(value)", unit: unit)!
+        XCTAssertTrue(utilsResult.isEqual(to: string))
     }
 }
