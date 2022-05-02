@@ -7,9 +7,32 @@
 
 import Foundation
 import Alamofire
+import UIKit
+
+enum NetworkState {
+    case none, loading, succeed, error
+}
+
+protocol DetailsViewModelDelegate {
+    func updateNetworkState(_ state: NetworkState)
+}
 
 class DetailsViewModel {
+    private var delegate: DetailsViewModelDelegate!
+    private var networkLayer: NetworkInterface!
     private var data: DataModel?
+    private var state: NetworkState = .none {
+        didSet {
+            delegate.updateNetworkState(state)
+        }
+    }
+    
+    init(_ delegate: DetailsViewModelDelegate, networkLayer: NetworkInterface) {
+        self.delegate = delegate
+        self.networkLayer = networkLayer
+    }
+    
+    
     
     var model: String {
         get { return data!.model }
@@ -41,30 +64,24 @@ class DetailsViewModel {
         }
     }
     
-    var drivenThisMonth: String {
+    var drivenThisMonth: NSAttributedString {
         get {
-            let unit = " \(Constants.kLengthUnit)"
-
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             formatter.usesGroupingSeparator = true
-            formatter.positiveSuffix = unit
+            formatter.positiveSuffix = Constants.kLengthUnit
 
-////            let number = NSNumber(value: data!.drivenThisMonth)
-            let number = NSNumber(value: 8562)
-            return formatter.string(from: number)!
-            
-//            let formatter = MeasurementFormatter()
-//            let length = Measurement(value: 9080, unit: )
-//
-//            return formatter.string(from: <#T##Measurement<Unit>#>)
+            let number = NSNumber(value: data!.drivenThisMonth)
+            let originalString = formatter.string(from: number)!
+            return Utils.attributeMeasurement(originalString, unit: Constants.kLengthUnit)
         }
     }
     
-    var usageDueThisMonth: String {
+    var usageDueThisMonth: NSAttributedString {
         get {
             let formatter = NumberFormatter()
-            return formatter.formatCurrency(Double(data!.usageDueThisMonth))
+            let originalString = formatter.formatCurrency(Double(data!.usageDueThisMonth))!
+            return Utils.attributeMeasurement(originalString, unit: Constants.kCurrencySymbol)
         }
     }
     
@@ -134,12 +151,15 @@ class DetailsViewModel {
     
     
     func getData(_ completion: @escaping () -> Void) {
-        AF.request(Constants.kEndpoint).validate().responseDecodable(of: Response.self) { (result) in
-        print(result)
-            guard let response = result.value else { return }
-            self.data = response.data
+        state = .loading
+        
+        networkLayer.request(Constants.kEndpoint, onSuccess: { data in
+            self.state = .succeed
+            self.data = data as! DataModel?
             completion()
-        }
+        }, onError: { error in
+            self.state = .error
+        })
     }
 }
 

@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 
 class DetailsViewController: UIViewController {
+    
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var carplateNumberLabel: UILabel!
@@ -37,10 +40,12 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var viewDocsButton: UIButton!
     
     
-    let viewModel: DetailsViewModel = DetailsViewModel();
-
+    var viewModel: DetailsViewModel!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = DetailsViewModel(self, networkLayer: AlamoFireAdaptor())
         
         hideItemsBasedOnCountry()
         getData()
@@ -66,8 +71,8 @@ class DetailsViewController: UIViewController {
         carplateNumberLabel.text = viewModel.carplateNumber
         daysLeftLabel.text = viewModel.daysLeft
         progressBar.progress = viewModel.progress
-        drivenThisMonthLabel.text = viewModel.drivenThisMonth
-        usageDueThisMonthLabel.text = viewModel.usageDueThisMonth
+        drivenThisMonthLabel.attributedText = viewModel.drivenThisMonth
+        usageDueThisMonthLabel.attributedText = viewModel.usageDueThisMonth
         lastUpdatedLabel.text = viewModel.lastUpdated
         basePriceLabel.text = viewModel.basePrice
         roadTaxLabel.text = viewModel.roadTax
@@ -80,9 +85,18 @@ class DetailsViewController: UIViewController {
         }
         insuranceExcessLabel.text = viewModel.insuranceExcess
     }
+    
+    func showError() {
+        let alert = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Retry", style: UIAlertAction.Style.default, handler: {_ in self.getData()}))
+
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
-// MARK: - Query data
+// MARK: - Data flow
 extension DetailsViewController {
   func getData() {
       viewModel.getData {[weak self] in
@@ -90,6 +104,24 @@ extension DetailsViewController {
               self?.updateUI()
           }
       }
+    }
+}
+
+// MARK: - DetailsViewModelDelegate
+extension DetailsViewController: DetailsViewModelDelegate {
+    func updateNetworkState(_ state: NetworkState) {
+        switch state {
+        case .loading:
+            loadingView.isHidden = false
+            loadingView.startAnimating()
+        case .error:
+            showError()
+            loadingView.isHidden = true
+            loadingView.stopAnimating()
+        default:
+            loadingView.isHidden = true
+            loadingView.stopAnimating()
+        }
     }
 }
 

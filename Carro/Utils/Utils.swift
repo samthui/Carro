@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import UIKit
+
+class Utils {
+    static func attributeMeasurement(_ string: String, unit: String) -> NSAttributedString! {
+        let mainAttribute: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.orange, .font: UIFont.systemFont(ofSize: 30)]
+        let attributtedString = NSMutableAttributedString(string: string, attributes: mainAttribute)
+        
+        let unitAttribute: [NSAttributedString.Key: Any] = [.font: UIFont.systemFont(ofSize: 17)]
+        let unitRange = (string as NSString).range(of: "\(unit)")
+        attributtedString.addAttributes(unitAttribute, range: unitRange)
+        return attributtedString
+    }
+}
