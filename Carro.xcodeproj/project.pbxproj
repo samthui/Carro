@@ -23,6 +23,10 @@
 		22DE7ED3281E85B8006A7C8B /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7ED2281E85B8006A7C8B /* ViewExtension.swift */; };
 		22DE7ED7281F748B006A7C8B /* NetworkInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7ED6281F748B006A7C8B /* NetworkInterface.swift */; };
 		22DE7ED9281F7653006A7C8B /* AlamoFireAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7ED8281F7653006A7C8B /* AlamoFireAdaptor.swift */; };
+		22DE7EE0281F97CB006A7C8B /* FormatterExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7EDF281F97CA006A7C8B /* FormatterExtensionTests.swift */; };
+		22DE7EE2281F97E2006A7C8B /* UtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7EE1281F97E2006A7C8B /* UtilsTests.swift */; };
+		22DE7EE4281F97F9006A7C8B /* AlamofireAdaptorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7EE3281F97F9006A7C8B /* AlamofireAdaptorTests.swift */; };
+		22DE7EE5281F98F3006A7C8B /* CalendarExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DE7EDD281F97B7006A7C8B /* CalendarExtensionTests.swift */; };
 		22ECB1DE281ACF6700825218 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DD281ACF6700825218 /* AppDelegate.swift */; };
 		22ECB1E0281ACF6700825218 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1DF281ACF6700825218 /* SceneDelegate.swift */; };
 		22ECB1E2281ACF6700825218 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB1E1281ACF6700825218 /* SettingsViewController.swift */; };
@@ -72,6 +76,10 @@
 		22DE7ED2281E85B8006A7C8B /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		22DE7ED6281F748B006A7C8B /* NetworkInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInterface.swift; sourceTree = "<group>"; };
 		22DE7ED8281F7653006A7C8B /* AlamoFireAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFireAdaptor.swift; sourceTree = "<group>"; };
+		22DE7EDD281F97B7006A7C8B /* CalendarExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensionTests.swift; sourceTree = "<group>"; };
+		22DE7EDF281F97CA006A7C8B /* FormatterExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterExtensionTests.swift; sourceTree = "<group>"; };
+		22DE7EE1281F97E2006A7C8B /* UtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilsTests.swift; sourceTree = "<group>"; };
+		22DE7EE3281F97F9006A7C8B /* AlamofireAdaptorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdaptorTests.swift; sourceTree = "<group>"; };
 		22ECB1DA281ACF6700825218 /* Carro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22ECB1DD281ACF6700825218 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22ECB1DF281ACF6700825218 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +222,31 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		22DE7EDA281F972A006A7C8B /* ExtensionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				22DE7EDD281F97B7006A7C8B /* CalendarExtensionTests.swift */,
+				22DE7EDF281F97CA006A7C8B /* FormatterExtensionTests.swift */,
+			);
+			path = ExtensionsTests;
+			sourceTree = "<group>";
+		};
+		22DE7EDB281F9740006A7C8B /* UtilsTests */ = {
+			isa = PBXGroup;
+			children = (
+				22DE7EE1281F97E2006A7C8B /* UtilsTests.swift */,
+			);
+			path = UtilsTests;
+			sourceTree = "<group>";
+		};
+		22DE7EDC281F9778006A7C8B /* NetworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				22DE7EE3281F97F9006A7C8B /* AlamofireAdaptorTests.swift */,
+			);
+			path = NetworkTests;
+			sourceTree = "<group>";
+		};
 		22ECB1D1281ACF6700825218 = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +293,9 @@
 		22ECB1F3281ACF6D00825218 /* CarroTests */ = {
 			isa = PBXGroup;
 			children = (
+				22DE7EDC281F9778006A7C8B /* NetworkTests */,
+				22DE7EDB281F9740006A7C8B /* UtilsTests */,
+				22DE7EDA281F972A006A7C8B /* ExtensionsTests */,
 				22ECB1F4281ACF6D00825218 /* CarroTests.swift */,
 			);
 			path = CarroTests;
@@ -552,7 +588,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DE7EE4281F97F9006A7C8B /* AlamofireAdaptorTests.swift in Sources */,
+				22DE7EE0281F97CB006A7C8B /* FormatterExtensionTests.swift in Sources */,
 				22ECB1F5281ACF6D00825218 /* CarroTests.swift in Sources */,
+				22DE7EE2281F97E2006A7C8B /* UtilsTests.swift in Sources */,
+				22DE7EE5281F98F3006A7C8B /* CalendarExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
