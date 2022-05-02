@@ -8,8 +8,29 @@
 import Foundation
 import Alamofire
 
+enum NetworkState {
+    case none, loading, finished
+}
+
+protocol DetailsViewModelDelegate {
+    func updateNetworkState(_ state: NetworkState)
+}
+
 class DetailsViewModel {
+    private var delegate: DetailsViewModelDelegate!
     private var data: DataModel?
+//    private var state: NetworkState = .none
+    private var state: NetworkState = .none {
+        didSet {
+            delegate.updateNetworkState(state)
+        }
+    }
+    
+    init(_ delegate: DetailsViewModelDelegate) {
+        self.delegate = delegate
+    }
+    
+    
     
     var model: String {
         get { return data!.model }
@@ -134,9 +155,11 @@ class DetailsViewModel {
     
     
     func getData(_ completion: @escaping () -> Void) {
+        state = .loading
         AF.request(Constants.kEndpoint).validate().responseDecodable(of: Response.self) { (result) in
-        print(result)
             guard let response = result.value else { return }
+            
+            self.state = .finished
             self.data = response.data
             completion()
         }

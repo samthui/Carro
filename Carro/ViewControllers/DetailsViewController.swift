@@ -10,6 +10,9 @@ import UIKit
 import Alamofire
 
 class DetailsViewController: UIViewController {
+    
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var carplateNumberLabel: UILabel!
@@ -37,10 +40,12 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var viewDocsButton: UIButton!
     
     
-    let viewModel: DetailsViewModel = DetailsViewModel();
-
+    var viewModel: DetailsViewModel!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = DetailsViewModel(self)
         
         hideItemsBasedOnCountry()
         getData()
@@ -82,7 +87,7 @@ class DetailsViewController: UIViewController {
     }
 }
 
-// MARK: - Query data
+// MARK: - Data flow
 extension DetailsViewController {
   func getData() {
       viewModel.getData {[weak self] in
@@ -90,6 +95,22 @@ extension DetailsViewController {
               self?.updateUI()
           }
       }
+    }
+}
+
+// MARK: - DetailsViewModelDelegate
+extension DetailsViewController: DetailsViewModelDelegate {
+    func updateNetworkState(_ state: NetworkState) {
+        switch state {
+        case .loading:
+            loadingView.isHidden = false
+            loadingView.startAnimating()
+            break
+        default:
+            loadingView.isHidden = true
+            loadingView.stopAnimating()
+            break
+        }
     }
 }
 
