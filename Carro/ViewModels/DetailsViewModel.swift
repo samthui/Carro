@@ -44,20 +44,14 @@ class DetailsViewModel {
     
     var daysLeft: String {
         get {
-            guard let days = data!.daysLeft else {
-                return "unknown days left"
-            }
-            
+            let days = data!.daysLeft ?? 0
             return "\(days) day\(days > 1 ? "s" : "") left"
         }
     }
     
     var progress: Float {
         get {
-            guard let days = data!.daysLeft else {
-                return 0.0
-            }
-            
+            let days = data!.daysLeft ?? 0
             let totalDays = Calendar.current.numberOfDaysBetweenTimestamp(data!.startTime, and: data!.endTime)
             
             return Float(days)/Float(totalDays)
@@ -79,8 +73,7 @@ class DetailsViewModel {
     
     var usageDueThisMonth: NSAttributedString {
         get {
-            let formatter = NumberFormatter()
-            let originalString = formatter.formatCurrency(Double(data!.usageDueThisMonth))!
+            let originalString = NumberFormatter.formatCurrency(Double(data!.usageDueThisMonth))!
             return Utils.attributeMeasurement(originalString, unit: Constants.kCurrencySymbol)
         }
     }
@@ -97,21 +90,20 @@ class DetailsViewModel {
     
     var basePrice: String {
         get {
-            let formatter = NumberFormatter()
-            return "\(formatter.formatCurrency(data!.basePrice ?? 0.0) ?? "0")/month"
+            return "\(NumberFormatter.formatCurrency(data!.basePrice ?? 0.0) ?? "$0.00")/month"
         }
     }
     
     var roadTax: String {
         get {
-            let formatter = NumberFormatter()
-            return formatter.formatCurrency(data!.roadTax)
+            return NumberFormatter.formatCurrency(data!.roadTax)
         }
     }
     
     var usageBasedInsurance: String {
         get {
-            return "$ \(data!.totalPerKmRate)/km"
+            let number = (data!.totalPerKmRate as NSString).doubleValue
+            return "\(NumberFormatter.formatCurrency(number) ?? "$0.00")/km"
         }
     }
     
@@ -132,20 +124,17 @@ class DetailsViewModel {
     
     var totalFinesAmount: String {
         get {
-            let formatter = NumberFormatter()
-            
             guard let value = data!.totalFinesAmount else {
-                return formatter.formatCurrency(0.0)
+                return NumberFormatter.formatCurrency(0.0)
             }
             
-            return formatter.formatCurrency(value)
+            return NumberFormatter.formatCurrency(value)
         }
     }
     
     var insuranceExcess: String {
         get {
-            let formatter = NumberFormatter()
-            return formatter.formatCurrency(data!.insuranceExcess)
+            return NumberFormatter.formatCurrency(data!.insuranceExcess)
         }
     }
     
