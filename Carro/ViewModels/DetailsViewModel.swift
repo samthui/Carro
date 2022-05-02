@@ -70,14 +70,8 @@ class DetailsViewModel {
             formatter.usesGroupingSeparator = true
             formatter.positiveSuffix = unit
 
-////            let number = NSNumber(value: data!.drivenThisMonth)
-            let number = NSNumber(value: 8562)
+            let number = NSNumber(value: data!.drivenThisMonth)
             return formatter.string(from: number)!
-            
-//            let formatter = MeasurementFormatter()
-//            let length = Measurement(value: 9080, unit: )
-//
-//            return formatter.string(from: <#T##Measurement<Unit>#>)
         }
     }
     

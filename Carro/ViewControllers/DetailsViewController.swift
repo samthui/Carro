@@ -114,13 +114,13 @@ extension DetailsViewController: DetailsViewModelDelegate {
         case .loading:
             loadingView.isHidden = false
             loadingView.startAnimating()
-            break
         case .error:
             showError()
+            loadingView.isHidden = true
+            loadingView.stopAnimating()
         default:
             loadingView.isHidden = true
             loadingView.stopAnimating()
-            break
         }
     }
 }
