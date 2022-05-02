@@ -85,6 +85,15 @@ class DetailsViewController: UIViewController {
         }
         insuranceExcessLabel.text = viewModel.insuranceExcess
     }
+    
+    func showError() {
+        let alert = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Retry", style: UIAlertAction.Style.default, handler: {_ in self.getData()}))
+
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Data flow
@@ -106,6 +115,8 @@ extension DetailsViewController: DetailsViewModelDelegate {
             loadingView.isHidden = false
             loadingView.startAnimating()
             break
+        case .error:
+            showError()
         default:
             loadingView.isHidden = true
             loadingView.stopAnimating()

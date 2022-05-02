@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 enum NetworkState {
-    case none, loading, finished
+    case none, loading, succeed, error
 }
 
 protocol DetailsViewModelDelegate {
@@ -19,7 +19,6 @@ protocol DetailsViewModelDelegate {
 class DetailsViewModel {
     private var delegate: DetailsViewModelDelegate!
     private var data: DataModel?
-//    private var state: NetworkState = .none
     private var state: NetworkState = .none {
         didSet {
             delegate.updateNetworkState(state)
@@ -156,13 +155,14 @@ class DetailsViewModel {
     
     func getData(_ completion: @escaping () -> Void) {
         state = .loading
-        AF.request(Constants.kEndpoint).validate().responseDecodable(of: Response.self) { (result) in
-            guard let response = result.value else { return }
-            
-            self.state = .finished
-            self.data = response.data
+        
+        AlamoFireAdaptor.request(Constants.kEndpoint, onSuccess: { data in
+            self.state = .succeed
+            self.data = data as! DataModel?
             completion()
-        }
+        }, onError: { error in
+            self.state = .error
+        })
     }
 }
 
