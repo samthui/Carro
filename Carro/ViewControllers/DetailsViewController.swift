@@ -71,8 +71,8 @@ class DetailsViewController: UIViewController {
         carplateNumberLabel.text = viewModel.carplateNumber
         daysLeftLabel.text = viewModel.daysLeft
         progressBar.progress = viewModel.progress
-        drivenThisMonthLabel.text = viewModel.drivenThisMonth
-        usageDueThisMonthLabel.text = viewModel.usageDueThisMonth
+        drivenThisMonthLabel.attributedText = viewModel.drivenThisMonth
+        usageDueThisMonthLabel.attributedText = viewModel.usageDueThisMonth
         lastUpdatedLabel.text = viewModel.lastUpdated
         basePriceLabel.text = viewModel.basePrice
         roadTaxLabel.text = viewModel.roadTax

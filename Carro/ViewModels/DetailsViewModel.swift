@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 enum NetworkState {
     case none, loading, succeed, error
@@ -61,24 +62,24 @@ class DetailsViewModel {
         }
     }
     
-    var drivenThisMonth: String {
+    var drivenThisMonth: NSAttributedString {
         get {
-            let unit = " \(Constants.kLengthUnit)"
-
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
             formatter.usesGroupingSeparator = true
-            formatter.positiveSuffix = unit
+            formatter.positiveSuffix = Constants.kLengthUnit
 
             let number = NSNumber(value: data!.drivenThisMonth)
-            return formatter.string(from: number)!
+            let originalString = formatter.string(from: number)!
+            return Utils.attributeMeasurement(originalString, unit: Constants.kLengthUnit)
         }
     }
     
-    var usageDueThisMonth: String {
+    var usageDueThisMonth: NSAttributedString {
         get {
             let formatter = NumberFormatter()
-            return formatter.formatCurrency(Double(data!.usageDueThisMonth))
+            let originalString = formatter.formatCurrency(Double(data!.usageDueThisMonth))!
+            return Utils.attributeMeasurement(originalString, unit: Constants.kCurrencySymbol)
         }
     }
     
